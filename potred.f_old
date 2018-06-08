@@ -1,0 +1,21 @@
+      subroutine potred(vtable)
+      implicit double precision(a-h,o-z)
+
+      dimension vtable(0:8251970)
+
+      open(2,file='pes.tab',status='old')
+
+      print *, "Start reading pes"
+
+      do i=0,8251970
+        print *, i
+        read(2,*)vtable(i)
+        print *, vtable(i)
+      enddo
+
+      print *, "End reading pes"
+
+      close(2,status='keep')
+
+      return
+      end
